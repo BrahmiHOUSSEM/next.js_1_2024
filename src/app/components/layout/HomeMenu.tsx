@@ -8,7 +8,7 @@ const HomeMenu = () => {
       <div className="absolute -z-10 h-full w-full right-0 left-0">
         <div className="left-0 -top-24 absolute">
           <Image
-            src={"/side_tacos_right.png"}
+            src={"side_tacos_right.png"}
             width={250}
             height={250}
             alt="Side Images"
@@ -16,7 +16,7 @@ const HomeMenu = () => {
         </div>
         <div className="right-0 -top-24  absolute">
           <Image
-            src={"/side_tacos_left.png"}
+            src={"side_tacos_left.png"}
             width={250}
             height={250}
             alt="Side Images"

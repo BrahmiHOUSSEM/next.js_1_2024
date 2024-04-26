@@ -30,7 +30,7 @@ const Landing = () => {
       </div>
       <div className="relative">
         <Image
-          src={"/tacos.png"}
+          src={"tacos.png"}
           layout={"fill"}
           objectFit={"contain"}
           alt={""}
