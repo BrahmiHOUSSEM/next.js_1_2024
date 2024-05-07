@@ -25,7 +25,7 @@ export default function RootLayout({
           <Header />
 
           {children}
-          <footer className="border-t p-8 text-center text-sm">
+          <footer className="border-t p-8 text-center text-sm mt-12">
             &copy; 2024 All rights reserved
           </footer>
         </main>

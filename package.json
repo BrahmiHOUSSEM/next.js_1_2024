@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongodb": "^6.6.0",
+    "mongoose": "^8.3.3",
+    "mongose": "^0.0.2-security",
     "next": "14.2.2",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.3"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/express": "^4.17.21",
+    "@types/node": "20.12.8",
+    "@types/react": "18.3.1",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",

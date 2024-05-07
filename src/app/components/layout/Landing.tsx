@@ -18,7 +18,7 @@ const Landing = () => {
         </p>
 
         <div className="flex gap-4 items-center text-sm">
-          <button className="font-bold flex items-center gap-2 text-white bg-main py-2 px-4 rounded-full">
+          <button className="font-bold flex items-center gap-2 text-white bg-main py-2 px-4 rounded-full border-none">
             ORDER NOW
             <ArrowRight size="w-5 h-5" />
           </button>
@@ -30,7 +30,7 @@ const Landing = () => {
       </div>
       <div className="relative">
         <Image
-          src={"tacos.png"}
+          src={"/tacos.png"}
           layout={"fill"}
           objectFit={"contain"}
           alt={""}
