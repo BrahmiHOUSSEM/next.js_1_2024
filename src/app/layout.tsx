@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
+import AppProvider from "./components/AppContext";
 
 const roboto_Slab = Roboto_Slab({
   subsets: ["latin"],
@@ -22,12 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto_Slab.className}>
         <main className="max-w-6xl mx-auto p-4">
-          <Header />
-
-          {children}
-          <footer className="border-t p-8 text-center text-sm mt-12">
-            &copy; 2024 All rights reserved
-          </footer>
+          <AppProvider>
+            <Header />
+            {children}
+            <footer className="border-t p-8 text-center text-sm mt-12">
+              &copy; 2024 All rights reserved
+            </footer>
+          </AppProvider>
         </main>
       </body>
     </html>

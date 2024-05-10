@@ -22,3 +22,10 @@ button {
 button[type="submit"] {
   @apply bg-main text-white border-0;
 }
+
+input[type="email"]:disabled,
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+button[type="submit"]:disabled {
+  @apply !border-none !bg-gray-300  !text-gray-400 cursor-not-allowed;
+}
