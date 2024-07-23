@@ -8,6 +8,7 @@ section.landing {
 }
 
 input[type="email"],
+input[type="name"],
 input[type="text"],
 input[type="password"] {
   @apply block w-full my-2 p-2;

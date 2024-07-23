@@ -6,6 +6,7 @@ import { useState } from "react";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [creatingUser, setCreatingUser] = useState(false);
   const [userCreated, setUserCreated] = useState(false);
   const [error, setError] = useState(false);
@@ -19,7 +20,7 @@ const Register = () => {
 
     const response = await fetch("/api/register", {
       method: "POST",
-      body: JSON.stringify({ email: email, password: password }),
+      body: JSON.stringify({ email: email, password: password, name: name }),
       headers: { "Content-Type": "application/json" },
     });
     if (!response.ok) {
@@ -52,6 +53,15 @@ const Register = () => {
         </div>
       )}
       <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
+        <input
+          type="name"
+          placeholder="name"
+          disabled={creatingUser}
+          value={name}
+          onChange={(ev) => {
+            setName(ev.target.value);
+          }}
+        />
         <input
           type="email"
           placeholder="email"

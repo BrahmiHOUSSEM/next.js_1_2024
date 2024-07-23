@@ -5,7 +5,12 @@ import Link from "next/link";
 const Header = () => {
   const session = useSession();
   const status = session.status;
-  console.log(status);
+  let userName: string | null | undefined = session.data?.user?.name;
+  if (userName && userName?.includes("")) {
+    const userNameSplit: string[] = userName.split(" ");
+    userName = userNameSplit[0];
+  }
+  console.log(session.data);
   return (
     <header className="flex items-center justify-between">
       <nav className="flex gap-8 text-gray-900 font-semibold items-center">
@@ -23,12 +28,20 @@ const Header = () => {
 
       <nav className="flex items-center gap-4">
         {status === "authenticated" && (
-          <button
-            className="px-7 py-2 bg-main rounded-full text-white border-none hover:shadow-md hover:shadow-black/50  ease-in-out duration-300"
-            onClick={() => signOut()}
-          >
-            Logout
-          </button>
+          <>
+            <Link
+              className="text-gray-900 font-semibold whitespace-nowrap"
+              href="/profile"
+            >
+              Hello , {userName}
+            </Link>
+            <button
+              className="px-7 py-2 bg-main rounded-full text-white border-none hover:shadow-md hover:shadow-black/50  ease-in-out duration-300"
+              onClick={() => signOut()}
+            >
+              Logout
+            </button>
+          </>
         )}
         {status === "unauthenticated" && (
           <>
