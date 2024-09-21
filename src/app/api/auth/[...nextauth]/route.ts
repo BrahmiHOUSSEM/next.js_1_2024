@@ -7,7 +7,7 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import type { Adapter } from "next-auth/adapters";
 import clientPromise from "@/lib/db";
 
-const handler = NextAuth({
+export const authOptions = {
   secret: process.env.SECRET,
   // adapter: MongoDBAdapter(clientPromise) as Adapter,
 
@@ -23,7 +23,6 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        console.log(credentials);
         const { email, password } = credentials as {
           email: string;
           password: string;
@@ -31,9 +30,9 @@ const handler = NextAuth({
         mongoose.connect(process.env.MONGO_URL || "");
 
         const user = await User.findOne({ email });
-        console.log(user);
+
         const passwordOk = user && bcrypt.compareSync(password, user.password);
-        console.log(passwordOk);
+
         if (passwordOk) {
           return user;
         }
@@ -41,6 +40,8 @@ const handler = NextAuth({
       },
     }),
   ],
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

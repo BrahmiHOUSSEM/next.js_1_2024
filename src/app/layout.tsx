@@ -3,6 +3,8 @@ import { Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import AppProvider from "./components/AppContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const roboto_Slab = Roboto_Slab({
   subsets: ["latin"],
@@ -24,6 +26,10 @@ export default function RootLayout({
       <body className={roboto_Slab.className}>
         <main className="max-w-6xl mx-auto p-4">
           <AppProvider>
+            <ToastContainer
+              bodyClassName={"whitespace-nowrap flex justify-between"}
+              closeButton={false}
+            />
             <Header />
             {children}
             <footer className="border-t p-8 text-center text-sm mt-12">

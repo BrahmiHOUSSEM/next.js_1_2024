@@ -10,6 +10,11 @@ const UserSchema = new Schema(
       required: true,
       minlength: [6, "Password must be at least six characters"],
     },
+    phone: { type: "string" },
+    address: { type: "string" },
+    city: { type: "string" },
+    codePostal: { type: "string" },
+    country: { type: "string" },
   },
   { timestamps: true }
 );

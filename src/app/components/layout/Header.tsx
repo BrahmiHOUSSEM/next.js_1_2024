@@ -10,7 +10,7 @@ const Header = () => {
     const userNameSplit: string[] = userName.split(" ");
     userName = userNameSplit[0];
   }
-  console.log(session.data);
+
   return (
     <header className="flex items-center justify-between">
       <nav className="flex gap-8 text-gray-900 font-semibold items-center">

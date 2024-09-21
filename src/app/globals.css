@@ -8,6 +8,7 @@ section.landing {
 }
 
 input[type="email"],
+input[type="tel"],
 input[type="name"],
 input[type="text"],
 input[type="password"] {
@@ -25,8 +26,57 @@ button[type="submit"] {
 }
 
 input[type="email"]:disabled,
+input[type="tel"]:disabled,
 input[type="text"]:disabled,
 input[type="password"]:disabled,
 button[type="submit"]:disabled {
   @apply !border-none !bg-gray-300  !text-gray-400 cursor-not-allowed;
+}
+
+label {
+  @apply text-gray-500 text-sm;
+}
+label + input {
+  margin-top: -4px !important;
+}
+
+div.tabs > * {
+  @apply bg-gray-300 text-gray-900 px-4 py-2 rounded-full;
+  &.active {
+    @apply bg-main text-white;
+  }
+}
+
+/* Loading Animation */
+.dots {
+  width: 3.5em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dots div {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background-color: #cd5c5c;
+  animation: fade 0.8s ease-in-out alternate infinite;
+}
+
+.dots div:nth-of-type(1) {
+  animation-delay: -0.4s;
+}
+
+.dots div:nth-of-type(2) {
+  animation-delay: -0.2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
